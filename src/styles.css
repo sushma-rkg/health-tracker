@@ -1,0 +1,115 @@
+:root {
+  --bg: #f6f4ef;
+  --panel: #ffffff;
+  --text: #2b2f33;
+  --muted: #6b7378;
+  --accent: #3f7d6e;
+  --accent-soft: #e0eee9;
+  --line: #e4e0d6;
+}
+
+* { box-sizing: border-box; }
+
+html, body, #root { height: 100%; margin: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+/* Phone layout (default): top bar, content, tabs at the bottom */
+.shell {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas: "top" "main" "nav";
+  height: 100%;
+}
+
+.topbar {
+  grid-area: top;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: calc(env(safe-area-inset-top) + 8px) 16px 8px;
+  background: var(--panel);
+  border-bottom: 1px solid var(--line);
+}
+
+.app-name { font-size: 1.1rem; font-weight: 600; }
+
+.settings-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+.settings-btn.active { background: var(--accent-soft); }
+
+.content { grid-area: main; overflow-y: auto; padding: 24px 20px; }
+
+.page { max-width: 640px; margin: 0 auto; }
+.page h1 { font-size: 1.8rem; margin: 0 0 8px; }
+.page p { color: var(--muted); margin: 0; }
+
+.tabs {
+  grid-area: nav;
+  display: flex;
+  background: var(--panel);
+  border-top: 1px solid var(--line);
+  padding: 6px 8px calc(env(safe-area-inset-bottom) + 6px);
+  gap: 6px;
+}
+
+.tab {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  min-height: 60px;
+  border-radius: 14px;
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+.tab-icon { font-size: 1.4rem; line-height: 1; }
+.tab.active { background: var(--accent-soft); color: var(--accent); }
+
+/* Laptop layout: tabs in a bar on the left side */
+@media (min-width: 800px) {
+  .shell {
+    grid-template-columns: 220px 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas: "nav top" "nav main";
+  }
+
+  .tabs {
+    flex-direction: column;
+    justify-content: flex-start;
+    border-top: none;
+    border-right: 1px solid var(--line);
+    padding: 24px 12px;
+    gap: 8px;
+  }
+
+  .tab {
+    flex: none;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 12px;
+    min-height: 56px;
+    padding: 0 16px;
+    font-size: 1.05rem;
+  }
+
+  .content { padding: 40px; }
+}
