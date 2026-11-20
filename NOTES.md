@@ -14,7 +14,7 @@
 6. Build the app: empty tabs online, login screen, then the daily check-in steps
 
 ## Progress
-- [ ] Step 1: Create the Supabase project (in progress)
+- [x] Step 1: Supabase project created (name: health-tracker, free plan, Mumbai region, Data API on, RLS on new tables on)
 - [ ] Step 2: Login
 - [ ] Step 3: Data model
 - [ ] Step 4: Tables and security rules
