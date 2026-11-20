@@ -1,6 +1,6 @@
 # Health Tracker – Data Plan (plain words)
 
-Status: **written, waiting for my approval.** Nothing has been created in Supabase.
+Status: **approved.** Nothing has been created in Supabase yet (that starts in Step 4).
 
 ## How to read this
 - A **table** is like one sheet in a spreadsheet.
@@ -98,7 +98,7 @@ Status: **written, waiting for my approval.** Nothing has been created in Supaba
   - Which blood test (Table 8).
   - Which measure: T3, T4, TSH, vitamin D, B12 or iron. New measures can be added later.
   - The value: a number.
-  - The unit: words I can change (for example ng/mL). I can set the unit for each result.
+  - The unit: words I can change. Each measure starts with a pre-filled unit (see "My answers" at the end). I can change the unit for each result.
 - **Rule:** one result per measure per blood test.
 - **Who can see it:** only me.
 
@@ -106,17 +106,18 @@ Status: **written, waiting for my approval.** Nothing has been created in Supaba
 - **What one row means:** one month's report.
 - **Items:**
   - The month (for example November 2026).
+  - When the report was made (a plain date), so several reports for the same month can be told apart.
   - The written summary (words).
   - "Early look, limited data" (yes/no).
   - Number of days logged (a whole number).
   - The numbers the report was based on (a saved bundle of numbers, so old reports never change if my data changes later).
-- **Rule:** one report per month.
+- **Rule:** more than one report per month is allowed. A new report never replaces an old one. It is added as another row.
 - **Who can see it:** only me.
 
 ---
 
 ## Worked out by the app, not stored
-- **Cycle length:** from my logged period start dates. A period start is a day where Period is yes and the day before was not yes.
+- **Cycle length:** from my logged period start dates, using the **average of my last 3 cycles**. A period start is a day where Period is yes and the day before was not yes. (If I have fewer than 3 cycles logged, the app uses what it has.)
 - **"Body done / Mind done":** the app checks whether the Body items and the Mind items have been filled in for that day.
 - **Next vitamin D shot due:** worked out from the date of my last shot.
 
@@ -130,9 +131,15 @@ Status: **written, waiting for my approval.** Nothing has been created in Supaba
 - I can fill in or fix past days (not only today).
 - If Alcohol or Period or Worked out changes back to no, the linked items (drinks, flow, cramps, workout types) are cleared.
 
-## Questions for me
-1. **Cycle length:** should the app use only my last cycle, or an average of my last 3 cycles?
-2. **Blood test units:** should I pre-fill common units for each measure (you can still change them), or leave all units blank?
-3. **Monthly reports:** if a report for the same month is made again, should it replace the old one or keep both?
-4. **Period setup vs. daily logging:** if the Period setup and my daily Period entries disagree, which should win?
-5. **Food triggers:** should "none today" be recorded as its own choice, or is "nothing picked" enough?
+## My answers (approved)
+1. **Cycle length:** average of my last 3 cycles.
+2. **Blood test units:** pre-filled. Starting suggestions, which I can change on any result (check them against my lab report):
+   - T3: ng/dL
+   - T4: ug/dL
+   - TSH: uIU/mL
+   - Vitamin D: ng/mL
+   - B12: pg/mL
+   - Iron: ug/dL
+3. **Monthly reports:** never replace an old one. Add another one.
+4. **Period setup vs. daily logging:** the daily Period entries win. (This is how I understood the answer. The setup row is only a starting point.)
+5. **Food triggers:** picking nothing means "none today". No separate "none" choice.
