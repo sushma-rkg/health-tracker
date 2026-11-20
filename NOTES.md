@@ -15,7 +15,7 @@
 
 ## Progress
 - [x] Step 1: Supabase project created (name: health-tracker, free plan, Mumbai region, Data API on, RLS on new tables on)
-- [ ] Step 2: Login
+- [x] Step 2 done: login set up, one account, sign-ups off
 - [ ] Step 3: Data model
 - [ ] Step 4: Tables and security rules
 - [ ] Step 5: Design sign-off
