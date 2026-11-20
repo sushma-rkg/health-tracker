@@ -13,7 +13,41 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- Shown while the app checks whether I am already logged in -->
+  <div class="boot" id="boot" role="status" aria-label="Loading">
+    <span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 12h4l2-6 4 12 2-6h6"/></svg></span>
+  </div>
 
+  <!-- The login screen: the only thing anyone sees before logging in -->
+  <div class="login" id="login-view" hidden>
+    <div class="login-in">
+      <div class="logo login-logo">
+        <span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 12h4l2-6 4 12 2-6h6"/></svg></span>
+        <span class="logo-name" data-app-name></span>
+      </div>
+
+      <div class="card login-card">
+        <h1 class="card-title">Welcome back</h1>
+        <p class="card-line">Good to see you. Log in to continue.</p>
+
+        <form id="login-form" novalidate>
+          <label class="field">
+            <span>Email</span>
+            <input id="email" name="email" type="email" autocomplete="username" inputmode="email" autocapitalize="none" spellcheck="false" required>
+          </label>
+          <label class="field">
+            <span>Password</span>
+            <input id="password" name="password" type="password" autocomplete="current-password" required>
+          </label>
+          <p class="msg" id="login-msg" role="alert" hidden></p>
+          <button class="btn" id="login-btn" type="submit">Log in</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- The app itself: only shown after logging in -->
+  <div id="app-view" hidden>
   <header class="header">
     <div class="header-in">
 
@@ -84,12 +118,23 @@
         <h2>Your settings</h2>
         <p>Coming soon</p>
       </div>
+      <div class="card">
+        <h2>Account</h2>
+        <p>You are logged in on this device.</p>
+        <p class="msg" id="logout-msg" role="alert" hidden></p>
+        <button class="btn-outline" id="logout-btn" type="button">Log out</button>
+      </div>
     </section>
 
     <noscript><div class="card"><h2>Please turn on JavaScript</h2><p>This app needs it to show its pages.</p></div></noscript>
   </main>
 
+  
+  </div>
+
   <script src="config.js"></script>
+  <script src="env.js"></script>
+  <script src="vendor/supabase.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
