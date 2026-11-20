@@ -17,7 +17,7 @@
 - [x] Step 1: Supabase project created (name: health-tracker, free plan, Mumbai region, Data API on, RLS on new tables on)
 - [x] Step 2 done: login set up, one account, sign-ups off
 - [x] Step 3 done: data plan written and approved (see data-plan.md)
-- [ ] Step 4: Tables and security rules
+- [x] Step 4 done: tables created, security on, tested (script saved in database/step-4-tables.sql)
 - [ ] Step 5: Design sign-off
 - [ ] Step 6: Build the app
 
