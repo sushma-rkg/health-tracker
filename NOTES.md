@@ -11,7 +11,7 @@
 3. Plan the data model in plain words
 4. Create the base tables with security rules
 5. Design notes saved
-6. Empty three-tab app online
+6. Empty four-tab app online
 7. Login screen connected to Supabase
 8. Daily check-in basics
 9. Pain and fatigue
@@ -35,11 +35,11 @@
 - [x] Step 2 done: login set up, one account, sign-ups off
 - [x] Step 3 done: data plan written and approved (see data-plan.md)
 - [x] Step 4 done: tables created, security on, tested (script saved in database/step-4-tables.sql)
-- [x] Step 5 done: design notes saved (see design-notes.md)
-- [ ] Step 6: Empty three-tab app online
+- [x] Step 5 done: design notes saved (see design-notes.md and the screenshots in design-reference/)
+- [ ] Step 6: Empty four-tab app online. NOTE: an earlier empty app (old purple and gold look, three tabs plus a settings icon) is already online from the `app` folder. It must be rebuilt in the new Tend design.
 - [ ] Steps 7 to 23: not started
 
 ## Rules
 - Build one step at a time. Do not jump ahead.
 - Never put passwords or secret keys in any file or chat.
-- Every build step follows the design notes (design-notes.md).
+- Every build step follows the design notes and the screenshots in design-reference.
