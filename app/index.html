@@ -3,100 +3,91 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#FAF5EA">
+  <meta name="theme-color" content="#FBF8F2">
   <meta name="robots" content="noindex, nofollow">
-  <title>Health Tracker</title>
+  <title>Tend</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="shell">
 
-    <!-- The three tabs: bottom bar on a phone, side bar on a laptop -->
-    <nav class="tabs" aria-label="Main">
-      <div class="brand" data-app-name></div>
+  <header class="header">
+    <div class="header-in">
 
-      <a class="tab" href="#/body" data-tab="body">
-        <span class="tab-icon" aria-hidden="true">
+      <a class="logo" href="#/body" aria-label="Home">
+        <span class="logo-mark" aria-hidden="true">
           <svg viewBox="0 0 24 24"><path d="M3 12h4l2-6 4 12 2-6h6"/></svg>
         </span>
-        <span class="tab-label">Body</span>
+        <span class="logo-name" data-app-name></span>
       </a>
 
-      <a class="tab" href="#/mind" data-tab="mind">
-        <span class="tab-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2V17h5v-1.1c0-.8.4-1.5 1-2A6 6 0 0 0 12 3z"/><path d="M10 20.5h4"/></svg>
-        </span>
-        <span class="tab-label">Mind</span>
-      </a>
-
-      <a class="tab" href="#/reports" data-tab="reports">
-        <span class="tab-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><path d="M6 20v-7M12 20V5M18 20v-10"/></svg>
-        </span>
-        <span class="tab-label">Reports</span>
-      </a>
-    </nav>
-
-    <div class="main">
-      <header class="topbar">
-        <div class="topbar-left">
-          <a class="back" id="back" href="#/body" hidden>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
-            <span>Back</span>
-          </a>
-          <span class="topbar-name" id="topbar-name" data-app-name></span>
-        </div>
-        <a class="settings-link" id="settings-link" href="#/settings" aria-label="Settings">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2"/><circle cx="9" cy="17" r="2"/></svg>
+      <!-- The four tabs: in the header on a laptop, a bar at the bottom on a phone -->
+      <nav class="tabs" aria-label="Main">
+        <a class="tab" href="#/body" data-tab="body">
+          <span class="tab-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 12h4l2-6 4 12 2-6h6"/></svg></span>
+          <span class="tab-label">Body</span>
         </a>
-      </header>
+        <a class="tab" href="#/mind" data-tab="mind">
+          <span class="tab-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2V17h5v-1.1c0-.8.4-1.5 1-2A6 6 0 0 0 12 3z"/><path d="M10 20.5h4"/></svg></span>
+          <span class="tab-label">Mind</span>
+        </a>
+        <a class="tab" href="#/reports" data-tab="reports">
+          <span class="tab-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 20v-7M12 20V5M18 20v-10"/></svg></span>
+          <span class="tab-label">Reports</span>
+        </a>
+        <a class="tab" href="#/settings" data-tab="settings">
+          <span class="tab-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2"/><circle cx="9" cy="17" r="2"/></svg></span>
+          <span class="tab-label">Settings</span>
+        </a>
+      </nav>
 
-      <main class="page-wrap" id="page">
-
-        <section class="page" id="page-body" hidden>
-          <p class="eyebrow" id="today-date"></p>
-          <h1 tabindex="-1">Good evening</h1>
-          <div class="card">
-            <h2>Coming soon</h2>
-            <p>This part is on its way.</p>
-          </div>
-        </section>
-
-        <section class="page" id="page-mind" hidden>
-          <h1 tabindex="-1">Mind</h1>
-          <p class="sub">How are you feeling tonight?</p>
-          <div class="card">
-            <h2>Coming soon</h2>
-            <p>This part is on its way.</p>
-          </div>
-        </section>
-
-        <section class="page" id="page-reports" hidden>
-          <h1 tabindex="-1">Reports</h1>
-          <p class="sub">Your monthly look-back</p>
-          <div class="card">
-            <h2>Coming soon</h2>
-            <p>This part is on its way.</p>
-          </div>
-        </section>
-
-        <section class="page" id="page-settings" hidden>
-          <h1 tabindex="-1">Settings</h1>
-          <p class="sub">Make this app yours</p>
-          <div class="card">
-            <h2>Coming soon</h2>
-            <p>This part is on its way.</p>
-          </div>
-        </section>
-
-        <noscript><div class="card"><h2>Please turn on JavaScript</h2><p>This app needs it to show its pages.</p></div></noscript>
-      </main>
+      <div class="today" id="today"></div>
     </div>
-  </div>
+  </header>
+
+  <main class="wrap" id="page">
+
+    <section class="page" id="page-body" hidden>
+      <p class="eyebrow">Body · Today</p>
+      <h1 tabindex="-1">How is your body today?</h1>
+      <div class="card">
+        <h2>Your daily check-in</h2>
+        <p>Coming soon</p>
+      </div>
+    </section>
+
+    <section class="page mind" id="page-mind" hidden>
+      <p class="eyebrow">Mind · Today</p>
+      <h1 tabindex="-1">How is your mind today?</h1>
+      <div class="card">
+        <h2>Your mind check-in</h2>
+        <p>Coming soon</p>
+      </div>
+    </section>
+
+    <section class="page" id="page-reports" hidden>
+      <p class="eyebrow">Reports</p>
+      <h1 tabindex="-1">Patterns over time</h1>
+      <div class="card">
+        <h2>Your patterns</h2>
+        <p>Coming soon</p>
+      </div>
+    </section>
+
+    <section class="page" id="page-settings" hidden>
+      <p class="eyebrow">Settings</p>
+      <h1 tabindex="-1">Make <span data-app-name></span> yours</h1>
+      <div class="card">
+        <h2>Your settings</h2>
+        <p>Coming soon</p>
+      </div>
+    </section>
+
+    <noscript><div class="card"><h2>Please turn on JavaScript</h2><p>This app needs it to show its pages.</p></div></noscript>
+  </main>
 
   <script src="config.js"></script>
   <script src="app.js"></script>

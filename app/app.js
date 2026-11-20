@@ -1,51 +1,37 @@
 (function () {
   "use strict";
 
-  var appName = (window.APP_CONFIG && window.APP_CONFIG.appName) || "Health Tracker";
+  var appName = (window.APP_CONFIG && window.APP_CONFIG.appName) || "Tend";
   document.title = appName;
   document.querySelectorAll("[data-app-name]").forEach(function (el) {
     el.textContent = appName;
   });
 
-  var TABS = ["body", "mind", "reports"];
-  var lastTab = "body";
+  // Today's date in the header, for example "Wed, 18 Nov 2026"
+  var d = new Date();
+  var parts = new Intl.DateTimeFormat("en-GB", {
+    weekday: "short", day: "numeric", month: "short", year: "numeric"
+  }).formatToParts(d).reduce(function (o, p) { o[p.type] = p.value; return o; }, {});
+  document.getElementById("today").textContent =
+    parts.weekday + ", " + parts.day + " " + parts.month + " " + parts.year;
 
-  var back = document.getElementById("back");
-  var topbarName = document.getElementById("topbar-name");
-  var settingsLink = document.getElementById("settings-link");
-
-  // Today's date for the Body page header
-  document.getElementById("today-date").textContent =
-    new Date().toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long" });
+  var PAGES = ["body", "mind", "reports", "settings"];
 
   function show() {
     var route = (location.hash || "").replace(/^#\/?/, "");
-    var isSettings = route === "settings";
-    var page = isSettings || TABS.indexOf(route) !== -1 ? route : "body";
-
-    if (!isSettings) lastTab = page;
+    var page = PAGES.indexOf(route) !== -1 ? route : "body";
 
     document.querySelectorAll(".page").forEach(function (el) {
       el.hidden = el.id !== "page-" + page;
     });
 
     document.querySelectorAll(".tab").forEach(function (el) {
-      if (!isSettings && el.dataset.tab === page) {
+      if (el.dataset.tab === page) {
         el.setAttribute("aria-current", "page");
       } else {
         el.removeAttribute("aria-current");
       }
     });
-
-    // Settings shows a back button; other pages show the app name (phone only)
-    back.hidden = !isSettings;
-    back.setAttribute("href", "#/" + lastTab);
-    topbarName.hidden = isSettings;
-    if (isSettings) {
-      settingsLink.setAttribute("aria-current", "page");
-    } else {
-      settingsLink.removeAttribute("aria-current");
-    }
 
     window.scrollTo(0, 0);
     var heading = document.querySelector("#page-" + page + " h1");
