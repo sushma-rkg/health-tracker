@@ -1,0 +1,229 @@
+/* Colours, shapes and sizes come from design-notes.md */
+:root {
+  --cream: #FAF5EA;
+  --card-border: #EFE6D3;
+  --plum: #2B2236;
+  --hint: #6B6075;
+  --purple: #6B45B8;
+  --purple-dark: #4B2C91;
+  --tint-1: #EFE8F9;
+  --tint-2: #D9C9F0;
+  --tint-3: #B596E3;
+  --field-border: #CDBFE6;
+  --gold: #E2AE3F;
+  --gold-tint: #FBEFCF;
+  --gold-text: #7A4F00;
+  --bar-border: #EADFC9;
+
+  --radius-card: 20px;
+  --radius-button: 14px;
+  --tap: 44px;
+  --side-width: 220px;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--plum);
+  font-family: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+svg {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+a { color: inherit; text-decoration: none; }
+[hidden] { display: none !important; }
+
+:focus-visible {
+  outline: 3px solid var(--purple);
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
+/* ---------- Top bar ---------- */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 64px;
+  padding: 10px 20px;
+  padding-top: calc(10px + env(safe-area-inset-top));
+}
+
+.topbar-left { display: flex; align-items: center; gap: 12px; min-width: 0; }
+
+.topbar-name {
+  font-weight: 700;
+  color: var(--purple-dark);
+}
+
+.settings-link,
+.back {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--tap);
+  background: #fff;
+  border: 1px solid var(--field-border);
+  border-radius: var(--radius-button);
+  color: var(--purple-dark);
+}
+
+.settings-link { width: var(--tap); }
+
+.back {
+  gap: 4px;
+  padding: 0 16px 0 10px;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+/* ---------- Pages ---------- */
+.page-wrap {
+  max-width: 720px;
+  padding: 8px 20px calc(110px + env(safe-area-inset-bottom));
+}
+
+.eyebrow {
+  margin: 0 0 4px;
+  color: var(--hint);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+h1 {
+  margin: 0 0 4px;
+  font-size: 30px;
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+h1:focus { outline: none; }
+
+.sub {
+  margin: 0 0 4px;
+  color: var(--hint);
+  font-size: 16px;
+}
+
+.card {
+  margin-top: 24px;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-card);
+  box-shadow: 0 1px 2px rgba(43, 34, 54, 0.04), 0 6px 18px rgba(43, 34, 54, 0.05);
+}
+
+.card h2 {
+  margin: 0 0 4px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.card p {
+  margin: 0;
+  color: var(--hint);
+}
+
+/* ---------- Tabs: bottom bar on a phone ---------- */
+.tabs {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-around;
+  background: #fff;
+  border-top: 1px solid var(--bar-border);
+  padding: 6px 8px calc(6px + env(safe-area-inset-bottom));
+}
+
+.brand { display: none; }
+
+.tab {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  min-height: 56px;
+  padding: 4px 0;
+  color: var(--hint);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.tab-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 32px;
+  border-radius: 999px;
+}
+
+.tab[aria-current="page"] { color: var(--purple-dark); font-weight: 700; }
+.tab[aria-current="page"] .tab-icon { background: var(--tint-1); }
+
+/* ---------- Tabs: side bar on a laptop ---------- */
+@media (min-width: 800px) {
+  .tabs {
+    top: 0;
+    right: auto;
+    width: var(--side-width);
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 6px;
+    padding: 28px 14px;
+    border-top: none;
+    border-right: 1px solid var(--bar-border);
+  }
+
+  .brand {
+    display: block;
+    margin: 0 10px 20px;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--purple-dark);
+  }
+
+  .tab {
+    flex: 0 0 auto;
+    flex-direction: row;
+    gap: 10px;
+    min-height: 52px;
+    padding: 0 6px;
+    font-size: 16px;
+    border-radius: var(--radius-button);
+  }
+
+  .tab-icon { width: 48px; }
+
+  .main { margin-left: var(--side-width); }
+  .topbar { padding: 16px 40px 10px; }
+  .topbar-name { display: none; }
+  .page-wrap { padding: 16px 40px 60px; }
+  h1 { font-size: 34px; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .tab-icon { transition: background-color 0.15s ease; }
+}

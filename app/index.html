@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#FAF5EA">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Health Tracker</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="shell">
+
+    <!-- The three tabs: bottom bar on a phone, side bar on a laptop -->
+    <nav class="tabs" aria-label="Main">
+      <div class="brand" data-app-name></div>
+
+      <a class="tab" href="#/body" data-tab="body">
+        <span class="tab-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M3 12h4l2-6 4 12 2-6h6"/></svg>
+        </span>
+        <span class="tab-label">Body</span>
+      </a>
+
+      <a class="tab" href="#/mind" data-tab="mind">
+        <span class="tab-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2V17h5v-1.1c0-.8.4-1.5 1-2A6 6 0 0 0 12 3z"/><path d="M10 20.5h4"/></svg>
+        </span>
+        <span class="tab-label">Mind</span>
+      </a>
+
+      <a class="tab" href="#/reports" data-tab="reports">
+        <span class="tab-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M6 20v-7M12 20V5M18 20v-10"/></svg>
+        </span>
+        <span class="tab-label">Reports</span>
+      </a>
+    </nav>
+
+    <div class="main">
+      <header class="topbar">
+        <div class="topbar-left">
+          <a class="back" id="back" href="#/body" hidden>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+            <span>Back</span>
+          </a>
+          <span class="topbar-name" id="topbar-name" data-app-name></span>
+        </div>
+        <a class="settings-link" id="settings-link" href="#/settings" aria-label="Settings">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2"/><circle cx="9" cy="17" r="2"/></svg>
+        </a>
+      </header>
+
+      <main class="page-wrap" id="page">
+
+        <section class="page" id="page-body" hidden>
+          <p class="eyebrow" id="today-date"></p>
+          <h1 tabindex="-1">Good evening</h1>
+          <div class="card">
+            <h2>Coming soon</h2>
+            <p>This part is on its way.</p>
+          </div>
+        </section>
+
+        <section class="page" id="page-mind" hidden>
+          <h1 tabindex="-1">Mind</h1>
+          <p class="sub">How are you feeling tonight?</p>
+          <div class="card">
+            <h2>Coming soon</h2>
+            <p>This part is on its way.</p>
+          </div>
+        </section>
+
+        <section class="page" id="page-reports" hidden>
+          <h1 tabindex="-1">Reports</h1>
+          <p class="sub">Your monthly look-back</p>
+          <div class="card">
+            <h2>Coming soon</h2>
+            <p>This part is on its way.</p>
+          </div>
+        </section>
+
+        <section class="page" id="page-settings" hidden>
+          <h1 tabindex="-1">Settings</h1>
+          <p class="sub">Make this app yours</p>
+          <div class="card">
+            <h2>Coming soon</h2>
+            <p>This part is on its way.</p>
+          </div>
+        </section>
+
+        <noscript><div class="card"><h2>Please turn on JavaScript</h2><p>This app needs it to show its pages.</p></div></noscript>
+      </main>
+    </div>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
